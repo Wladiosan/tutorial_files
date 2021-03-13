@@ -128,7 +128,8 @@ module.exports = {
     // Добавление плагинов
     plugins: [
         // подключаем ./src/index.html который превратится в ./dist/index.html
-        new HTMLWebpackPlugin({
+        new
+        ({
             template: './index.html'
         }),
         // очистка папки dist
