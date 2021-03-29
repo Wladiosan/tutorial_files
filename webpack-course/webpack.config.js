@@ -53,9 +53,7 @@ const cssLoaders = extra => {
             reloadAll: true*/
         }
     }, 'css-loader']
-
     if (extra) loaders.push(extra)
-
     return loaders
 }
 
@@ -128,8 +126,7 @@ module.exports = {
     // Добавление плагинов
     plugins: [
         // подключаем ./src/index.html который превратится в ./dist/index.html
-        new
-        ({
+        new HTMLWebpackPlugin({
             template: './index.html'
         }),
         // очистка папки dist
