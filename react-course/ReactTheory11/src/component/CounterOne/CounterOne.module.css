@@ -1,0 +1,19 @@
+.CounterOne {
+    border: 1px solid green;
+    margin-top: 50px;
+}
+
+.CounterOne h1 {
+    margin-left: 50px;
+}
+
+.Action {
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.Action button {
+    margin: 10px;
+    padding: 5px;
+}
