@@ -1,6 +1,7 @@
 <h1>Courses</h1>
 
 {{#if courses.length}}
+
 {{#each courses}}
 
 <div class="row">
@@ -17,10 +18,10 @@
         </div>
 
         <div class="card-action actions">
-            <a href="/courses/{{id}}" target="_blank">Open Course</a>
-            <a href="/courses/{{id}}/edit?allow=true" target="_blank">Edit Course</a>
+            <a href="/courses/{{_id}}" target="_blank">Open Course</a>
+            <a href="/courses/{{_id}}/edit?allow=true" target="_blank">Edit Course</a>
             <form action="/card/add" method="POST">
-              <input type="hidden" name="id" value="{{ id }}">
+              <input type="hidden" name="id" value="{{_id}}">
               <button class="btn btn-primary" type="submit">Buy</button>
             </form>
         </div>
@@ -28,7 +29,9 @@
       </div>
     </div>
   </div>
+  
 {{/each}}
+
 {{else}}
 <p>Courses does not exist</p>
 {{/if}}
