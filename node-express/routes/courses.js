@@ -1,5 +1,6 @@
 const {Router} = require('express')
 const Course = require('../models/course')
+const auth = require('../middleware/auth')
 const router = Router()
 
 
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
     })
 })
 
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/edit', auth,async (req, res) => {
     if (!req.query.allow) {
         return res.redirect('/')
     }
@@ -27,14 +28,14 @@ router.get('/:id/edit', async (req, res) => {
     })
 })
 
-router.post('/edit', async (req, res) => {
+router.post('/edit', auth, async (req, res) => {
     const {id} = req.body
     delete req.body.id
     await Course.findOneAndUpdate(id, req.body).lean()
     res.redirect('/courses')
 })
 
-router.post('/remove/:id', async (req, res) => {
+router.post('/remove/:id', auth, async (req, res) => {
     try {
         await Course.deleteOne({_id: req.params.id})
         res.redirect('/courses')
