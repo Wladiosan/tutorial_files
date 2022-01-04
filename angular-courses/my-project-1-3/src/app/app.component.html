@@ -1,0 +1,89 @@
+<div>
+
+  <!--<button (click)="onClick()">Click me!</button>
+  <input
+    type="text"
+    (keyup)="onInput($event)"
+    (blur)="onBlur(myInput.value)"
+    #myInput
+  >
+  <input [(ngModel)]="inputValue">
+  <p><strong>{{inputValue}}</strong></p>-->
+
+
+  <!--  <button (click)="toggle = !toggle">Toggle</button>
+  <div [ngStyle]="{
+  width: '500px',
+  height: '500px',
+  border: '1px solid #ccc',
+  background: backgroundToggle ? 'red' : 'blue'}"></div>
+  <p [ngClass]="{'red': backgroundToggle, 'blue': !backgroundToggle}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, quis.</p>
+  <p [class.blue]="backgroundToggle" [class.red]="!backgroundToggle">Lorem ipsum dolor sit amet.</p>-->
+
+
+
+ <!-- <button (click)="toggle = !toggle">Toggle</button>
+  <p *ngIf="toggle; else blueP" class="blue">Lorem ipsum dolor sit amet.</p>
+
+  <ng-template #blueP>
+    <p class="red">Lorem ipsum dolor sit amet.</p>
+  </ng-template>-->
+
+
+<!--  <button (click)="toggle = !toggle">Toggle</button>
+  <button (click)="toggle = 123">Toggle</button>
+
+  <div [ngSwitch]="toggle">
+    <p *ngSwitchCase="true">Lorem ipsum dolor sit amet.</p>
+    <p *ngSwitchCase="false">Lorem ipsum dolor.</p>
+    <p *ngSwitchDefault>Lorem.</p>
+  </div>-->
+
+<!--  <h1> For </h1>
+  <ul>
+    <li *ngFor="let n of arr; let inx = index">
+      {{inx}} : <strong>{{n}}</strong>
+    </li>
+  </ul>-->
+
+  <!--<ul style="list-style: none">
+    <li *ngFor="let post of obj">
+      <p>{{post.title}} <b>{{post.author}}</b></p>
+      <ul>
+        <li *ngFor="let comment of post.comments">
+          <div>
+            <small>{{comment.name}}</small>
+            <p>{{comment.text}}</p>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>-->
+
+  <!--{{now | date}}-->
+
+  <div class="container">
+
+    <h1>Angular Components</h1>
+    <app-post-form
+      (onAdd)="updatePosts($event)"
+    ></app-post-form>
+
+    <hr />
+
+    <app-post
+      *ngFor="let p of posts"
+      [myPost]='p'
+      (onRemove)="removePost($event)"
+    >
+      <div #info>
+        <small *ngIf="p.text.length > 10; else short">Post is long</small>
+        <ng-template #short>
+          <small>Post is short</small>
+        </ng-template>
+      </div>
+    </app-post>
+
+  </div>
+
+</div>
