@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Angular Pipes</h1>
+
+  <hr>
+
+  <button class="btn" (click)="addPost()">Add Post</button>
+
+  <input type="text" [(ngModel)]="search">
+
+  <div
+    *ngFor="let p of posts | filter:search"
+    class="card"
+  >
+    <h2>{{ p.title }}</h2>
+    <p>{{ p.text }}</p>
+  </div>
+</div>
+
+
