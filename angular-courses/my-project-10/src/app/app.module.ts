@@ -7,7 +7,6 @@ import {SharedModule} from './shared/shared.module'
 
 import {AppComponent} from './app.component'
 import {HomePageComponent} from './home-page/home-page.component'
-import {AboutPageModule} from './about-page/about-page.module'
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import {AboutPageModule} from './about-page/about-page.module'
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AboutPageModule,
     SharedModule
   ],
   providers: [],

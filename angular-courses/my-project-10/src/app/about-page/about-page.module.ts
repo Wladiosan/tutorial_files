@@ -17,8 +17,9 @@ import {AboutExtraPageComponent} from './about-extra-page/about-extra-page.compo
     CommonModule,
     RouterModule.forChild([
       // http://localhost:4200/about
+      // default prefix: 'about'
       {
-        path: 'about',
+        path: '',
         component: AboutPageComponent,
         children: [
           // http://localhost:4200/about/extra
