@@ -8,23 +8,7 @@ import {AboutExtraPageComponent} from './about-page/about-extra-page/about-extra
 @NgModule({
   imports: [RouterModule.forRoot([
       // http://localhost:4200
-      {
-        path: '',
-        component: HomePageComponent,
-        pathMatch: 'full'
-      },
-      // http://localhost:4200/about
-      {
-        path: 'about',
-        component: AboutPageComponent,
-        children: [
-          // http://localhost:4200/about/extra
-          {
-            path: 'extra',
-            component: AboutExtraPageComponent
-          }
-        ]
-      }
+      {path: '', component: HomePageComponent, pathMatch: 'full'}
     ]
   )],
   exports: [RouterModule]
