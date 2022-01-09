@@ -3,27 +3,23 @@ import {BrowserModule} from '@angular/platform-browser'
 import {FormsModule} from "@angular/forms"
 
 import {AppRoutingModule} from './app-routing.module'
-import {PageNamePipe} from './shared/page-name.pipe'
-import {ColorDirective} from './shared/color.directive'
+import {SharedModule} from './shared/shared.module'
 
 import {AppComponent} from './app.component'
 import {HomePageComponent} from './home-page/home-page.component'
-import {AboutPageComponent} from './about-page/about-page.component'
-import {AboutExtraPageComponent} from './about-page/about-extra-page/about-extra-page.component'
+import {AboutPageModule} from './about-page/about-page.module'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    AboutPageComponent,
-    AboutExtraPageComponent,
-    PageNamePipe,
-    ColorDirective
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AboutPageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
