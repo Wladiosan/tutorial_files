@@ -1,7 +1,9 @@
 <h1 appColor>{{ 'About page' | pageName }}</h1>
 
-<button class="btn">Mark as read</button>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sit.</p>
+<button class="btn" (click)="read = !read">{{ read ? 'Mark as not read' : 'Mark as read'}}</button>
+<p
+  [ngStyle]="{color: read ? '#7e7e7e' : null, textDecoration: read ? 'line-through' : null}"
+>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sit.</p>
 
 <p><a [routerLink]="['/about', 'extra']">Show more...</a></p>
 <p><a [routerLink]="['/about']">Hide more...</a></p>
